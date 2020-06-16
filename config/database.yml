@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: rubicon_development
+
+test:
+  <<: *default
+  database: rubicon_test
+
+production:
+  <<: *default
+  database: rubicon_production
+  username: rubicon
+  password: <%= ENV['RUBICON_DATABASE_PASSWORD'] %>
+  
