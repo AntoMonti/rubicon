@@ -1,0 +1,8 @@
+<%= form_with model: @item do |f| %>
+  <li>Name: <%= f.text_field :name %></li>
+  <li>Price: <%= f.text_field :price %></li>
+  <%#<%= f.options_for_select([['Real', 1], ['Unreal', 2]]) %>
+  <li>Weight: <%= f.text_field :weight %></li>
+  <li>Description: <%= f.text_area :description, size: "60x12" %></li>
+  <li><%= f.submit "Create" %></li>
+<% end %>
