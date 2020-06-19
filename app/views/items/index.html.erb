@@ -1,5 +1,13 @@
 <% @items.each do |item| %>
-  <li><%= item.name %></li>
-  <li><%= item.price %></li>
-  <li><%= item.description %></li>
+  <ul>
+    <li>Name: <%= link_to item.name, item_path(item) %></li>
+    <li>Price: <%= item.price %></li>
+    <li>Weight: <%= item.weight %></li>
+    <li>Description: <%= item.description %></li>
+    <li>Rating: <%= item.votes_count %> <%= link_to ' +', upvote_item_path(item) %></li>
+    <li><%= link_to 'Delete', item_path(item), method: :delete %></li>
+    <li>______________________________</li>
+  </ul>
 <% end %>
+<%= link_to 'Create new', new_item_path %> |
+<%= link_to 'Only expensive', expensive_items_path %> 
