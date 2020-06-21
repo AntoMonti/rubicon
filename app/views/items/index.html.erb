@@ -1,4 +1,4 @@
-<% @items.each do |item| %>
+<% @items.sort.each do |item| %>
   <ul>
     <li>Name: <%= link_to item.name, item_path(item) %></li>
     <li>Price: <%= item.price %></li>
