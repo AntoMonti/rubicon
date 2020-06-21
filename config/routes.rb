@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     get :expensive, on: :collection
   end
   get '/admin/users_count', to: 'admin#users_count'
+
+  root to: 'items#index'
 end
