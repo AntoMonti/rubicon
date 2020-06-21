@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_action :admin?
+  layout 'admin'
 
   def admin?
     render file: 'public/500.html' unless params[:admin]
