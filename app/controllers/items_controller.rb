@@ -15,9 +15,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(items_params)
     if @item.save
+      flash[:success] = "#{@item.name} was successfully created"
       redirect_to @item
     else
-      render 'new'
+      flash[:error] = "Object has not been created"
+      render :new
     end
   end
 
@@ -36,8 +38,10 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.find(params[:id]).destroy
-    redirect_to @item
+    @item = Item.find(params[:id])
+    @item.destroy
+    flash[:success] = "#{@item.name} was successfully deleted"
+    redirect_to items_path
   end
 
   def upvote
