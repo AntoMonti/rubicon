@@ -1,0 +1,10 @@
+%h3 Items information
+%ul
+    %li Name: "#{@item.name}"
+    %li Price: "#{@item.price}
+    %li Weight: "#{@item.weight}
+    %li Description: "#{@item.description}"
+    %li_________________
+    = link_to "Go back |", items_path
+    = link_to "Edit #{@item.name} |", edit_item_path
+    = link_to "Delete", item_path, method: :delete 
