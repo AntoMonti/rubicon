@@ -1,8 +1,10 @@
-<%= form_with model: @item do |f| %>
-  <li>Name: <%= f.text_field :name %></li>
-  <li>Price: <%= f.text_field :price %></li>
-  <%#<%= f.options_for_select([['Real', 1], ['Unreal', 2]]) %>
-  <li>Weight: <%= f.text_field :weight %></li>
-  <li>Description: <%= f.text_area :description, size: "60x12" %></li>
-  <li><%= f.submit "Create" %></li>
-<% end %>
+<ul>
+  <%= simple_form_for @item do |f| %>
+    <li><%= f.input :name %></li>
+    <li><%= f.input :price %></li>
+    <%#<%= f.options_for_select([['Real', 1], ['Unreal', 2]]) %>
+    <li><%= f.input :weight %></li>
+    <li><%= f.input :description %></li>
+    <li><%= f.submit "Create", class: "btn-primary" %></li>
+  <% end %>
+</ul>
