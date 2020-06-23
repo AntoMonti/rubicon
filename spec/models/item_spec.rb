@@ -27,6 +27,6 @@ RSpec.describe Item, type: :model do
   it 'factory implement: calculates the total price' do
     order.items << item
     order.items << item
-    expect(order.calculate_total).to be 82000.0
+    expect(order.calculate_total).to be <= 110000
   end
 end
