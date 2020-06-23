@@ -18,5 +18,15 @@ RSpec.describe Item, type: :model do
     should have_many(:carts).through(:positions)
     should have_many(:comments)
     should have_one(:image)
-  end 
+  end
+
+  let!(:item) { create :item }
+  let!(:item) { create :item }
+  let!(:order) { create :order }
+
+  it 'factory implement: calculates the total price' do
+    order.items << item
+    order.items << item
+    expect(order.calculate_total).to be 82000.0
+  end
 end
