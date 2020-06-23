@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :item do
-    name        { 'Subaru' }
-    price       { 41000 }
+    name        { Faker::Vehicle.make_and_model }
+    price       { rand 12000...55000 }
     real        { true }
-    weight      { 1700 }
-    description { 'It`s japanese car'}
+    weight      { rand 1500...3400 }
+    description { Faker::Vehicle.car_options }
   end
 end
