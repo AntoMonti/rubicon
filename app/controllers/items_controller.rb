@@ -41,7 +41,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item.destroy
     flash[:success] = "#{@item.name} was successfully deleted"
-    redirect_to items_path
+    render json:{ success: true }
+
   end
 
   def upvote

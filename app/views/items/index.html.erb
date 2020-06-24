@@ -1,11 +1,11 @@
 <% @items.sort.each do |item| %>
-  <ul>
+  <ul data-item_id="<%= item.id %>">
     <li>Name: <%= link_to item.name, item_path(item) %></li>
     <li>Price: <%= item.price %></li>
     <li>Weight: <%= item.weight %></li>
     <li>Description: <%= item.description %></li>
     <li>Rating: <%= item.votes_count %> <%= link_to ' +', upvote_item_path(item) %></li>
-    <li><%= link_to 'Delete', item_path(item), method: :delete %></li>
+    <li class="deleteAction">delete</li>
     <li>______________________________</li>
   </ul>
 <% end %>
