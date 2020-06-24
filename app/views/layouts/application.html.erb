@@ -11,8 +11,7 @@
 
   <body>
     <div class="container">
-      <p><%= flash[:error] %></p>
-      <p><%= flash[:success] %></p>
+      <%= render 'include/main/notification' %>
       <%= yield %>
     </div>
   </body>
